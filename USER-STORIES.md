@@ -9,12 +9,12 @@
 
 ### **User Stories**
 
-The librarian should be able to:
+The *librarian* should be able to:
 - Issue a book to the borrower
 - Collect book back from the borrower
 - Contact borrower about arrival of requested book
   
-The borrower should be able to:
+The *borrower* should be able to:
 - View all available books
 - Borrow a book
 - Return a book
