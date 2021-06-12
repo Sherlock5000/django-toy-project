@@ -1,7 +1,7 @@
 # **Library Management System**
 
 ### **Persona**
-1. Librarian (Admin): The person working at the library
+1. Librarian(Admin): The person working at the library
    - Lends and collects books to/from the user.
    - Performs other library operations (count of books in total, copies per book etc.).
 
