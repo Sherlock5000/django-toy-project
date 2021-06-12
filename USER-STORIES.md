@@ -1,7 +1,7 @@
 # **Library Management System**
 
 ### **Persona**
-1. Librarian: The person working at the library
+1. Librarian (Admin): The person working at the library
    - Lends and collects books to/from the user.
    - Performs other library operations (count of books in total, copies per book etc.).
 
@@ -10,9 +10,10 @@
 ### **User Stories**
 
 The *librarian* should be able to:
-- Issue a book to the borrower
-- Collect book back from the borrower
-- Contact borrower about arrival of requested book
+- View all available books
+- Add a book to the library
+- Delete a book in the library
+- View all book-requests from users
   
 The *borrower* should be able to:
 - View all available books
