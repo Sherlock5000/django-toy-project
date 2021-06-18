@@ -22,8 +22,8 @@ The contents of this directory include:
 1. Create a separate directory for this project using ```mkdir```.
 2. Clone the project using the submitted URL using ```git clone``` inside this directory.
 3. Create a virtual environment for the project using ```virtualenv``` and activate it.
-4. Ensure that all dependencies have been downloaded from ```requirements.txt``` file.
-5. Enter the project directory using ```cd```.
+4. Enter the project directory using ```cd```.
+5. Ensure that all dependencies have been downloaded from ```requirements.txt``` file.
 6. Open Postgres prompt using ```sudo -u postgres psql```.
 7. Type ```\i create_db.sql``` to create the database for the project. Type ```\q``` to exit this prompt.
 8. Type ```cd src``` to enter the source directory.
