@@ -84,9 +84,9 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'LIBRARY_TEST',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
+        'NAME': 'libraryapp',
+        'USER': 'djangouser',
+        'PASSWORD': 'djangouser',
         'HOST': 'localhost',
         'PORT': '5432'
 

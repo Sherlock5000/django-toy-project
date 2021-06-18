@@ -1,0 +1,3 @@
+CREATE DATABASE libraryapp;
+CREATE USER djangouser WITH ENCRYPTED PASSWORD 'djangouser';
+GRANT ALL PRIVILEGES ON DATABASE libraryapp TO djangouser;
