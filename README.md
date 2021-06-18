@@ -44,7 +44,7 @@ The contents of this directory include:
 23. Return to the terminal and press ```Ctrl + C``` to stop the server.
 24. Type ```cd ..``` to go back one level in the directory structure.
 25. Repeat Step 6.
-26. Type ```\i drop_db.sql``` to drop the database for the project.
+26. Type ```\i drop_db.sql``` to drop the database for the project. Type ```\q``` to exit this prompt.
 27. Type ```deactivate``` to deactivate the virtual environment.
 
 
