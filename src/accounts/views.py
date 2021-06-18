@@ -14,6 +14,7 @@ from .models import *
 from .forms import OrderForm, CreateUserForm
 from .filters import OrderFilter
 
+# Register Page View
 def registerPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -32,6 +33,7 @@ def registerPage(request):
 		context = {'form':form}
 		return render(request, 'accounts/register.html', context)
 
+# Login Page View
 def loginPage(request):
 	if request.user.is_authenticated:
 		return redirect('home')
@@ -51,11 +53,12 @@ def loginPage(request):
 		context = {}
 		return render(request, 'accounts/login.html', context)
 
+# Logout User View
 def logoutUser(request):
 	logout(request)
 	return redirect('login')
 
-
+# Home Page View
 @login_required(login_url='login')
 def home(request):
 	orders = Order.objects.all()
@@ -73,12 +76,14 @@ def home(request):
 
 	return render(request, 'accounts/dashboard.html', context)
 
+# Products Page View
 @login_required(login_url='login')
 def products(request):
 	products = Product.objects.all()
 
 	return render(request, 'accounts/products.html', {'products':products})
 
+# Customer Page View
 @login_required(login_url='login')
 def customer(request, pk_test):
 	customer = Customer.objects.get(id=pk_test)
@@ -93,6 +98,7 @@ def customer(request, pk_test):
 	'myFilter':myFilter}
 	return render(request, 'accounts/customer.html',context)
 
+# Create Order View
 @login_required(login_url='login')
 def createOrder(request, pk):
 	OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=2 )
@@ -110,6 +116,7 @@ def createOrder(request, pk):
 	context = {'form':formset}
 	return render(request, 'accounts/order_form.html', context)
 
+# Update Order View
 @login_required(login_url='login')
 def updateOrder(request, pk):
 
@@ -125,6 +132,7 @@ def updateOrder(request, pk):
 	context = {'form':form}
 	return render(request, 'accounts/order_form.html', context)
 
+# Delete Order View
 @login_required(login_url='login')
 def deleteOrder(request, pk):
 	order = Order.objects.get(id=pk)
