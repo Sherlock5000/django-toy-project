@@ -16,6 +16,9 @@ from .filters import OrderFilter
 
 # Register Page View
 def registerPage(request):
+	'''
+	Sets up a view for new user registration.
+	'''
 	if request.user.is_authenticated:
 		return redirect('home')
 	else:
@@ -35,6 +38,9 @@ def registerPage(request):
 
 # Login Page View
 def loginPage(request):
+	'''
+	Sets up a login page view.
+	'''
 	if request.user.is_authenticated:
 		return redirect('home')
 	else:
@@ -55,12 +61,18 @@ def loginPage(request):
 
 # Logout User View
 def logoutUser(request):
+	'''
+	Sets up a view for logout.
+	'''
 	logout(request)
 	return redirect('login')
 
 # Home Page View
 @login_required(login_url='login')
 def home(request):
+	'''
+	Sets up a view for home page.
+	'''
 	orders = Order.objects.all()
 	customers = Customer.objects.all()
 
@@ -79,6 +91,9 @@ def home(request):
 # Products Page View
 @login_required(login_url='login')
 def products(request):
+	'''
+	Sets up a view for product page.
+	'''
 	products = Product.objects.all()
 
 	return render(request, 'accounts/products.html', {'products':products})
@@ -86,6 +101,9 @@ def products(request):
 # Customer Page View
 @login_required(login_url='login')
 def customer(request, pk_test):
+	'''
+	Sets up a view for a particular customer.
+	'''
 	customer = Customer.objects.get(id=pk_test)
 
 	orders = customer.order_set.all()
@@ -101,6 +119,9 @@ def customer(request, pk_test):
 # Create Order View
 @login_required(login_url='login')
 def createOrder(request, pk):
+	'''
+	Sets up a view for creating new orders.
+	'''
 	OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=2 )
 	customer = Customer.objects.get(id=pk)
 	formset = OrderFormSet(queryset=Order.objects.none(),instance=customer)
@@ -119,7 +140,9 @@ def createOrder(request, pk):
 # Update Order View
 @login_required(login_url='login')
 def updateOrder(request, pk):
-
+	'''
+	Sets up a view for updating an order.
+	'''
 	order = Order.objects.get(id=pk)
 	form = OrderForm(instance=order)
 
@@ -135,6 +158,9 @@ def updateOrder(request, pk):
 # Delete Order View
 @login_required(login_url='login')
 def deleteOrder(request, pk):
+	'''
+	Sets up a view to delete an order.
+	'''
 	order = Order.objects.get(id=pk)
 	if request.method == "POST":
 		order.delete()
