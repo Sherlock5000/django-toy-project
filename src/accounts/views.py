@@ -1,12 +1,7 @@
 from django.shortcuts import render, redirect
-# from django.http import HttpResponse
 from django.forms import inlineformset_factory
-# from django.contrib.auth.forms import UserCreationForm
-
 from django.contrib.auth import authenticate, login, logout
-
 from django.contrib import messages
-
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -79,8 +74,6 @@ def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
 
-    # total_customers = customers.count()
-
     total_orders = orders.count()
     delivered = orders.filter(status='Delivered').count()
     pending = orders.filter(status='Pending').count()
@@ -143,7 +136,6 @@ def createOrder(request, pk):
     formset = OrderFormSet(queryset=Order.objects.none(), instance=customer)
 
     if request.method == 'POST':
-        # form = OrderForm(request.POST)
         formset = OrderFormSet(request.POST, instance=customer)
         if formset.is_valid():
             formset.save()
