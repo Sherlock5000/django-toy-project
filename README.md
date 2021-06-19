@@ -11,8 +11,8 @@ The main objective of this project is to develop an authentication system for th
 The contents of this directory include:
 
 - **src**: This folder contains the project directories and files.
-- **createdb.sql**: This file contains the SQL script to create the database for the project.
-- **drop_db**: This file contains the SQL script to delete the database created for the project after use.
+- **create_db.sql**: This file contains the SQL script to create the database for the project.
+- **drop_db.sql**: This file contains the SQL script to delete the database created for the project after use.
 - **README.md**: This is the file we are in. It contains details about this project, its files and specific instructions on how to run the code.
 - **requirements.txt**: This file contains all the dependencies that need to be installed prior to running the code.
 - **USER-STORIES.md**: This file contains the user stories for the project.
@@ -21,9 +21,9 @@ The contents of this directory include:
 
 1. Create a separate directory for this project using ```mkdir```.
 2. Clone the project using the submitted URL using ```git clone``` inside this directory.
-3. Create a virtual environment for the project using ```virtualenv``` and activate it.
+3. Create a virtual environment for the project using ```virtualenv my_env``` and activate it using ```source my_env/bin/activate```.
 4. Enter the project directory using ```cd```.
-5. Ensure that all dependencies have been downloaded from ```requirements.txt``` file.
+5. Ensure that all dependencies have been downloaded from ```requirements.txt``` file using ```pip install -r requirements.txt```.
 6. Open Postgres prompt using ```sudo -u postgres psql```.
 7. Type ```\i create_db.sql``` to create the database for the project. Type ```\q``` to exit this prompt.
 8. Type ```cd src``` to enter the source directory.
