@@ -16,6 +16,7 @@ The contents of this directory include:
 - **README.md**: This is the file we are in. It contains details about this project, its files and specific instructions on how to run the code.
 - **requirements.txt**: This file contains all the dependencies that need to be installed prior to running the code.
 - **USER-STORIES.md**: This file contains the user stories for the project.
+- **.flake8**: This file contains settings with which flake8 should operate on the project.
 
 ## Instructions to run the code
 
